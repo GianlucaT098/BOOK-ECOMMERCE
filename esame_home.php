@@ -105,7 +105,7 @@
         //setcookie("co",$codici);
         //$_SESSION["co"]=$codici;
 
-        $results_per_page = 1;
+        $results_per_page = 2;
         $que="SELECT * from libro";
         $result=mysqli_query($conn,$que) or die("Errore: ".mysqli_error($conn));
         $number_of_result=mysqli_num_rows($result);
@@ -336,7 +336,7 @@ function listEntries(booksInfo) {
     //console.log(book);
 
     // Alert the user that the book is not previewable
-    var p = document.createElement("a");
+    var p = document.createElement("p");
     p.innerHTML = book.preview;
     //console.log(book.preveiw_url);
     if (p.innerHTML == "noview"){

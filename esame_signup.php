@@ -2,7 +2,7 @@
     require_once 'esame_auth.php';
 
     if (checkAuth()) {
-        header("Location: esamee_home.php");
+        header("Location: esame_home.php");
         exit;
     }   
 
@@ -106,7 +106,7 @@
     </div>
 
     <div class="topnav" id="myTopnav">
-      <a href="home.php">Home</a>
+      <a href="esame_home.php">Home</a>
       <!--<a href="#news">News</a>-->
       <a href="#about">Informaioni</a>
       <a href="esame_cart.php">Carrello</a>

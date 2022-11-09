@@ -50,7 +50,7 @@
                 setcookie("user_id", $entry['cliente']+1, $expires);
                 setcookie("cookie_id", mysqli_insert_id($conn), $expires);
                 setcookie("token", $token, $expires);
-                header("Location: home.php");
+                header("Location: esame_home.php");
                 mysqli_free_result($res);
                 mysqli_close($conn);
                 ///exit;
@@ -93,7 +93,7 @@
 
 
     <div class="topnav" id="myTopnav">
-      <a href="home.php">Home</a>
+      <a href="esame_home.php">Home</a>
       <!--<a href="#news">News</a>-->
       <a href="#about">Informzaioni</a>
       <a href="esame_cart.php">Carrello</a>
@@ -124,7 +124,7 @@
                     <input type='submit' class="buttoN" value="Accedi">
                 </p>
             </form>
-            <div class="signup">Non hai un account? <a href="signup.php" class="button">Iscriviti</a> </div>
+            <div class="signup">Non hai un account? <a href="esame_signup.php" class="button">Iscriviti</a> </div>
             </div>
             <?php
             // Verifica la presenza di errori

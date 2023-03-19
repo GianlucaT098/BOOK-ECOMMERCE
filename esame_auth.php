@@ -22,6 +22,7 @@
                 if ($cookie = mysqli_fetch_assoc($res)) {
                     // Se scaduto, lo elimino
                     if(/*time() > $cookie['expires']*/FALSE) {
+                        //codice non eseguito
                         mysqli_query($conn, "DELETE FROM cookies WHERE id = ".$cookie['id']) or die(mysqli_error($conn));
                         header('Location: esame_logout.php');
                         exit;
@@ -39,5 +40,9 @@
             return $_SESSION['username'];
         }
     }
+
+    /*Nota: session_start() è necessario per «ricollegarsi» alla sessione 
+    esistente. Senza session_start(), session_destroy() non sa quale 
+    sessione chiudere.*/
 
 ?>

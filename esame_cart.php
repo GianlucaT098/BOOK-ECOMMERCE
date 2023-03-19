@@ -14,10 +14,13 @@ $conn = mysqli_connect("localhost", "root", "1965196919931998", "esercitazione1"
 $queryordine= "SELECT dettaglio_ordini.id_ordine , dettaglio_ordini.id_libro , dettaglio_ordini.quantita from dettaglio_ordini inner JOIN maordine on dettaglio_ordini.id_ordine=maordine.id_ordine";
 $gordine= mysqli_query($conn, $queryordine) or die(mysqli_error($conn));
 $ordineo = mysqli_fetch_object($gordine);
-$id_ordine=$ordineo->id_ordine;
-$id_libro=$ordineo->id_libro;
-$quantita=$ordineo->quantita;
-$psingolo=round($pre/$quantita,2);
+if($ordineo != null)
+{
+  $id_ordine=$ordineo->id_ordine;
+  $id_libro=$ordineo->id_libro;
+  $quantita=$ordineo->quantita;
+  $psingolo=round($pre/$quantita,2);  
+}
 
 ?>
 
@@ -256,7 +259,7 @@ function listEntries(booksInfo) {
     // Alert the user that the book is not previewable
     var p = document.createElement("a");
     p.innerHTML = book.preview;
-    if (p.innerHTML == "noview"){
+    /*if (p.innerHTML == "noview"){
       p.style.fontWeight = "bold";
       p.style.color = "#f00";
     }
@@ -268,7 +271,7 @@ function listEntries(booksInfo) {
               + 'style="border:0; margin:3px;" />');
             document.write('<\/a>');
             break;
-    }
+    }*/
 
     mainDiv.appendChild(thumbnailDiv);
   }

@@ -242,7 +242,7 @@ thumbnailDiv.appendChild(p1);
 var p = document.createElement("a");
 p.innerHTML = book.preview;
 
-if (p.innerHTML == "noview"){
+/*if (p.innerHTML == "noview"){
 p.style.fontWeight = "bold";
 p.style.color = "#f00";
 }
@@ -254,7 +254,7 @@ document.write('<a href="' + book.preview_url + '">');
         + 'style="border:0; margin:3px;" />');
       document.write('<\/a>');
       break;
-}
+}*/
 
 mainDiv.appendChild(thumbnailDiv);
 }
@@ -405,6 +405,7 @@ else if( !empty($_POST["svuoto"]) and $_COOKIE["ordinato"]=="sium" and empty($_P
       setcookie("ciao", "no");
 
   setcookie("ordinato", "nope");
+  setcookie("prezzo",0);
 
   unset($_COOKIE["ciao"]);
 
@@ -428,6 +429,7 @@ else if(empty($_POST["quantita"]) and !empty($_POST["placeorder"]) and $_COOKIE[
 else
 {
   $_POST["quantita"]=null;
+  //setcookie("prezzo",0);
   exit;
 }
 
